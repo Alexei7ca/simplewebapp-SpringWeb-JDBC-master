@@ -43,7 +43,7 @@ public class EmployeeDAO {
 
     public Employee addEmployee(Employee employee) {
         //TODO: вроде как да
-        String sql="insert into employee(firstName, lastName, gender, departmentId, jobTitle, dateOfBirth) values('"+employee.getFirstName()+"',"+employee.getLastName()+","+employee.getGender()+","+employee.getDepartmentId()+","+employee.getJobTitle()+",'"+employee.getDateOfBirth()+"')";
+        String sql="insert into employee(first_name, last_name, gender, department_id, job_title, date_of_birth) values('"+employee.getFirstName()+"',"+employee.getLastName()+","+employee.getGender()+","+employee.getDepartmentId()+","+employee.getJobTitle()+",'"+employee.getDateOfBirth()+"')";
         template.update(sql);
         String newEmployeeId ="SELECT MAX(employeeId) FROM employee";
         int id = template.queryForObject(newEmployeeId, Integer.class);
@@ -51,12 +51,10 @@ public class EmployeeDAO {
     }
 
     public Employee updateEmployee(Employee employee) {
-        //TODO: remains to be seen
-        String sql="update employee set firstName='"+employee.getFirstName()+"',lastName='"+employee.getLastName()+"',gender='"+employee.getGender()+"',departmentId='"+employee.getDepartmentId()+"', jobTitle="+employee.getJobTitle()+",dateOfBirth='"+employee.getDateOfBirth()+"' where employeeId="+employee.getEmployeeId()+"";
+        //working.
+        String sql="update employee set first_name='"+employee.getFirstName()+"',last_name='"+employee.getLastName()+"',gender='"+employee.getGender()+"',department_id='"+employee.getDepartmentId()+"', job_title='"+employee.getJobTitle()+"',date_of_birth='"+employee.getDateOfBirth()+"' where employeeId="+employee.getEmployeeId()+"";
          template.update(sql);
-        String UpdateEmployeeId ="SELECT SCOPE_IDENTITY()";
-        int id = template.queryForObject(UpdateEmployeeId, Integer.class);
-        return getItemById(id);
+        return employee;
     }
 
     public void deleteEmployee(int employeeId) {

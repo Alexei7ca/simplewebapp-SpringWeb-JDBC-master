@@ -2,7 +2,9 @@ package com.mastery.java.task.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+// туту лучше конфиг датасоурс
 
+//сделать через web.xml
 public class AppConfiguration extends AbstractAnnotationConfigDispatcherServletInitializer {
     // Этот метод должен содержать конфигурации которые инициализируют Beans
     // для инициализации бинов у нас использовалась аннотация @Bean

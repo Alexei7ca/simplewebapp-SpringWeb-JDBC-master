@@ -93,7 +93,7 @@ public class EmployeeController {
     //HTTP Status 400 – Bad Request - Description -
     // The server cannot or will not process the request due to something that is perceived to be a client error
     // (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
-    @RequestMapping(value="save", method = RequestMethod.POST)
+    @RequestMapping(value="/save", method = RequestMethod.POST)
     public String save(@ModelAttribute("employee") Employee employee){
         employeeDAO.addEmployee(employee);
         return "redirect:/test/viewEmployees";
