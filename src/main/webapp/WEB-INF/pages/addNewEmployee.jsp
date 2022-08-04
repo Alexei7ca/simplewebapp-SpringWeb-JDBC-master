@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <h1>Add New Employee</h1>
-<form:form method="post" action="/test/addNewEmployee">
+<form:form method="post" action="/test/save">
     <table >
         <tr>
             <td>firstName : </td>
@@ -24,8 +24,7 @@
 <%--            <td>Gender (MALE/FEMALE): </td>--%>
 <%--            <td><form:input path="gender"  /></td>--%>
 <%--        </tr>--%>
-
-<%--        this should make it into a selection drop-down menu (check on this later when the form works)--%>
+<%--        this makes it into a selection drop-down menu--%>
         <tr>
             <td>Gender: </td>
             <td><form:select path="gender">

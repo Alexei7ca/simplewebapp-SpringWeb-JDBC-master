@@ -89,11 +89,14 @@ public class EmployeeController {
         return "addNewEmployee";
     }
 
-    //this one saves the new employee
-    @RequestMapping(value="addNewEmployee/save", method = RequestMethod.POST)
-    public String saveNewEmployee(@ModelAttribute("employee") Employee employee){
+    //this one should save the new employee
+    //HTTP Status 400 – Bad Request - Description -
+    // The server cannot or will not process the request due to something that is perceived to be a client error
+    // (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
+    @RequestMapping(value="save", method = RequestMethod.POST)
+    public String save(@ModelAttribute("employee") Employee employee){
         employeeDAO.addEmployee(employee);
-        return "redirect:viewEmployees";
+        return "redirect:/test/viewEmployees";
     }
 
    //seems fine, not saving tho, gotta check the "editSave" method
