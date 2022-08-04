@@ -40,7 +40,7 @@
 
         <tr>
             <td> </td>
-            <td><input type="submit" value="Edit Save" /></td>
+            <td><input type="submit" value="editSave" /></td>
         </tr>
     </table>
 </form:form>

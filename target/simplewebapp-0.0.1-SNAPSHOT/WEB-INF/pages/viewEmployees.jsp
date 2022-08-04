@@ -20,10 +20,10 @@
             <td>${employee.departmentId}</td>
             <td>${employee.jobTitle}</td>
             <td>${employee.dateOfBirth}</td>
-         <td><a href="editEmployee/${employee.employeeId}">Edit</a></td>   <%--to do--%>
-         <td><a href="deleteEmployee/${employee.employeeId}">Delete</a></td>  <%--to do--%>
+         <td><a href="editEmployee/${employee.employeeId}">Edit</a></td>
+         <td><a href="deleteEmployee/${employee.employeeId}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
 <br/>
-<a href="http://localhost:8080/test/addNewEmployee">Add Employee</a>  <%--to do--%>
+<a href="http://localhost:8080/test/addNewEmployee">Add Employee</a>
