@@ -18,8 +18,12 @@
             <td><form:input path="lastName"  /></td>
         </tr>
         <tr>
-            <td>Gender : </td>
-            <td><form:input path="gender"  /></td>
+            <td>Gender: </td>
+            <td><form:select path="gender">
+                <form:option value="MALE"/>
+                <form:option value="FEMALE"/>
+            </form:select>
+            </td>
         </tr>
         <tr>
             <td>departmentId : </td>

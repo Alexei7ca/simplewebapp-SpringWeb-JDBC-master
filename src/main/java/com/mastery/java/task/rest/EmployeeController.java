@@ -82,14 +82,21 @@ public class EmployeeController {
         return "viewEmployees";
     }
 
-    //405 method Get not supported - wtf?! I don't have GETs here!
-    @RequestMapping(value="addNewEmployee", method = RequestMethod.POST)
-    public String saveNewEmployee(@ModelAttribute("employee") Employee employee){
-        employeeDAO.addEmployee(employee);
-        return "redirect:/viewEmployees";
+    //this one redirects you to the form to fill up for new employee
+    @RequestMapping("addNewEmployee")
+    public String showForm(Model model){
+        model.addAttribute("command", new Employee());
+        return "addNewEmployee";
     }
 
-   //пока не понятно что тут с этим
+    //this one saves the new employee
+    @RequestMapping(value="addNewEmployee/save", method = RequestMethod.POST)
+    public String saveNewEmployee(@ModelAttribute("employee") Employee employee){
+        employeeDAO.addEmployee(employee);
+        return "redirect:viewEmployees";
+    }
+
+   //seems fine, not saving tho, gotta check the "editSave" method
     @RequestMapping(value="/editEmployee/{employeeId}")
     public String edit(@PathVariable int employeeId, Model model){
         Employee employee = employeeDAO.getItemById(employeeId);
@@ -97,7 +104,7 @@ public class EmployeeController {
         return "editEmployee";
     }
 
-    //same error not found
+    //org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "FIRSTNAME" not found;
     @RequestMapping(value="/editSave",method = RequestMethod.POST)
     public String editSave(@ModelAttribute("employee") Employee employee){
         employeeDAO.updateEmployee(employee);

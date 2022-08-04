@@ -17,21 +17,23 @@
         </tr>
         <tr>
             <td>lastName : </td>
-            <td><form:input path="LastName"  /></td>
-        </tr>
-        <tr>
-            <td>Gender (MALE/FEMALE): </td>
-            <td><form:input path="gender"  /></td>
+            <td><form:input path="lastName"  /></td>
         </tr>
 
-<%--        this should make it into a selection drop-down menu (check on this later when the form works)--%>
 <%--        <tr>--%>
 <%--            <td>Gender (MALE/FEMALE): </td>--%>
-<%--            <td><form:select path="gender"/>--%>
-<%--            <form:option value="MALE"/>--%>
-<%--            <form:option value="FEMALE"/>--%>
-<%--            </td>--%>
+<%--            <td><form:input path="gender"  /></td>--%>
 <%--        </tr>--%>
+
+<%--        this should make it into a selection drop-down menu (check on this later when the form works)--%>
+        <tr>
+            <td>Gender: </td>
+            <td><form:select path="gender">
+            <form:option value="MALE"/>
+            <form:option value="FEMALE"/>
+            </form:select>
+            </td>
+        </tr>
 
         <tr>
             <td>departmentId : </td>
@@ -49,8 +51,6 @@
             <td> </td>
             <td><input type="submit" value="Save" /></td>
 
-<%--            this is an option to check later instead of the previous line "save"--%>
-<%--            <td><input type="submit" value="/test/addNewEmployee" /></td>--%>
         </tr>
     </table>
 </form:form>
