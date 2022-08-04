@@ -60,8 +60,9 @@ public class EmployeeDAO {
     }
 
     public void deleteEmployee(int employeeId) {
-        //TODO: yup, seems fine
+        //working.
         String sql="delete from employee where employeeId="+employeeId+"";
+        template.update(sql);
     }
 
 

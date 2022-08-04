@@ -97,10 +97,16 @@ public class EmployeeController {
         return "editEmployee";
     }
 
-    //пока не понятно что тут с этим и за чем мне 2 метода один едит и один едит сейф?
+    //same error not found
     @RequestMapping(value="/editSave",method = RequestMethod.POST)
     public String editSave(@ModelAttribute("employee") Employee employee){
         employeeDAO.updateEmployee(employee);
         return "redirect:/viewEmployees";
+    }
+
+    @RequestMapping(value="/deleteEmployee/{employeeId}",method = RequestMethod.GET)
+    public String delete(@PathVariable int employeeId){
+        employeeDAO.deleteEmployee(employeeId);
+        return "redirect:/test/viewEmployees";
     }
 }
