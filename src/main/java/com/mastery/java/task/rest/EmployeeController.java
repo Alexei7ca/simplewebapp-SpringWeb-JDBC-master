@@ -101,10 +101,10 @@ public class EmployeeController {
     @RequestMapping(value="/editSave",method = RequestMethod.POST)
     public String editSave(@ModelAttribute("employee") Employee employee){
         employeeDAO.updateEmployee(employee);
-        return "redirect:/viewEmployees";
+        return "redirect:/test/viewEmployees";
     }
 
-    @RequestMapping(value="/deleteEmployee/{employeeId}",method = RequestMethod.GET)
+    @RequestMapping(value="/deleteEmployee/{employeeId}",method = RequestMethod.GET) //works.
     public String delete(@PathVariable int employeeId){
         employeeDAO.deleteEmployee(employeeId);
         return "redirect:/test/viewEmployees";
