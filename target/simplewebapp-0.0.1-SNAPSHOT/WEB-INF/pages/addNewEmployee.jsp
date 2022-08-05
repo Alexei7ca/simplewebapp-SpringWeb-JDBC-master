@@ -20,10 +20,6 @@
             <td><form:input path="lastName"  /></td>
         </tr>
 
-<%--        <tr>--%>
-<%--            <td>Gender (MALE/FEMALE): </td>--%>
-<%--            <td><form:input path="gender"  /></td>--%>
-<%--        </tr>--%>
 <%--        this makes it into a selection drop-down menu--%>
         <tr>
             <td>Gender: </td>

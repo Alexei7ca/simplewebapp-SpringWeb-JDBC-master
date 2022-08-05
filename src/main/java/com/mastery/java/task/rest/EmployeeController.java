@@ -93,9 +93,9 @@ public class EmployeeController {
     //HTTP Status 400 – Bad Request - Description -
     // The server cannot or will not process the request due to something that is perceived to be a client error
     // (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
-    @RequestMapping(value="/save", method = RequestMethod.POST)
+    @RequestMapping(value="/save",method = RequestMethod.POST)
     public String save(@ModelAttribute("employee") Employee employee){
-        employeeDAO.addEmployee(employee);
+        employeeDAO.updateEmployee(employee);
         return "redirect:/test/viewEmployees";
     }
 
@@ -107,7 +107,6 @@ public class EmployeeController {
         return "editEmployee";
     }
 
-    //org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "FIRSTNAME" not found;
     @RequestMapping(value="/editSave",method = RequestMethod.POST)
     public String editSave(@ModelAttribute("employee") Employee employee){
         employeeDAO.updateEmployee(employee);
