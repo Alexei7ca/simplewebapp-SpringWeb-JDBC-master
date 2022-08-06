@@ -30,4 +30,6 @@ public class AppConfiguration extends AbstractAnnotationConfigDispatcherServletI
         return new String[]{"/test/*"};
     }
 
+
+
 }
