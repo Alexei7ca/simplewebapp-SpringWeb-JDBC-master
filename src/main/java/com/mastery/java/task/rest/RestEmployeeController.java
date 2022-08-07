@@ -53,15 +53,24 @@ public class RestEmployeeController {
 //    }
 
 
+//    @PostMapping(path = "/employees",
+//            consumes = MediaType.APPLICATION_JSON_VALUE,
+//            produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping("/employees")
     public Employee createEmployee(@RequestBody Employee employee) {
         return this.employeeDAO.addEmployee(employee);
     }
 
     @PutMapping("/employees/{employeeId}")
-    public Employee updateEmployee(@PathVariable(value = "employeeId") int employeeId){
-        Employee employee = employeeDAO.getItemById(employeeId);
-        return this.employeeDAO.updateEmployee(employee);
+    public Employee updateEmployee(@PathVariable(value = "employeeId")  int employeeId, @RequestBody Employee employee){
+        Employee currentEmployee = employeeDAO.getItemById(employeeId);
+        currentEmployee.setFirstName(employee.getFirstName());
+        currentEmployee.setLastName(employee.getLastName());
+        currentEmployee.setGender(employee.getGender());
+        currentEmployee.setDepartmentId(employee.getDepartmentId());
+        currentEmployee.setJobTitle(employee.getJobTitle());
+        currentEmployee.setDateOfBirth(employee.getDateOfBirth());
+        return this.employeeDAO.updateEmployee(currentEmployee);
     }
 
     @DeleteMapping("/employees/{employeeId}")
