@@ -2,6 +2,7 @@ package com.mastery.java.task.rest;
 
 import com.mastery.java.task.dao.EmployeeDAO;
 import com.mastery.java.task.dto.Employee;
+import com.mastery.java.task.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +18,20 @@ public class RestEmployeeController {
 
     @Autowired
     EmployeeDAO employeeDAO;
+    @Autowired
+    EmployeeService employeeService;
 
 
-// not working
+// before moving into service class
+//    @ResponseBody
+//    @GetMapping("/employees")
+//    public List<Employee> getAllEmployees() {
+//        return this.employeeDAO.getItems();
+//    }
     @ResponseBody
     @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
-        return this.employeeDAO.getItems();
+        return this.employeeService.getAllEmployees();
     }
 
     @GetMapping("/employee/{employeeId}")
