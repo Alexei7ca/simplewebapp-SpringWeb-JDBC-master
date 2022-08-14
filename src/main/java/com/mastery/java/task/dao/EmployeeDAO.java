@@ -30,9 +30,18 @@ public class EmployeeDAO {
         return count;
     }
 
+
+    //return all
     public List<Employee> getItems() {
         String query = "SELECT * FROM employee";
         List<Employee> results = template.query(query, new EmployeeRowMapper());
+        return results;
+    }
+
+    //return range
+    public List<Employee> getItems(int from, int count) {
+        String query = "SELECT * FROM employee LIMIT ? OFFSET ?";
+        List<Employee> results = template.query( query, new Object[] { count, from }, new EmployeeRowMapper());
         return results;
     }
 

@@ -8,22 +8,24 @@
 <html>
 <body>
 <h1>  SpringMVC JSP </h1>
-<a href="http://localhost:8080/test/welcome">http://localhost:8080/test/welcome</a>
+<a href="http://localhost:8080/test/welcome">/test/welcome</a>
 <br>
-<a href="http://localhost:8080/test/employees">http://localhost:8080/test/employees</a>
+<a href="http://localhost:8080/test/employees">/test/employees</a>
 <br>
-<a href="http://localhost:8080/test/employees/count">http://localhost:8080/test/employees/count</a>
+<a href="http://localhost:8080/test/employees/count">/test/employees/count</a>
 <br>
 <a href="http://localhost:8080/test/viewEmployees">View Employees</a>
 <br>
 <a href="http://localhost:8080/test/addNewEmployee">Add Employee</a>
 
 <h1>  REST </h1>
-<a href="http://localhost:8080/test/rest/welcome">http://localhost:8080/test/rest/welcome</a>
+<a href="http://localhost:8080/test/rest/welcome">/test/rest/welcome</a>
 <br>
-<a href="http://localhost:8080/test/rest/employees">http://localhost:8080/test/rest/employees</a>
+<a href="http://localhost:8080/test/rest/employees/all">/test/rest/employees/all</a>
 <br>
-<a href="http://localhost:8080/test/rest/employees/count">http://localhost:8080/test/rest/employees/count</a>
+<a href="http://localhost:8080/test/rest/employees?from=1&count=2">/test/rest/employees from 2nd to 3rd</a>
+<br>
+<a href="http://localhost:8080/test/rest/employees/count">/test/rest/employees/count</a>
 
 </body>
 </html>

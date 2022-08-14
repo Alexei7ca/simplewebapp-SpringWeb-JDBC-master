@@ -3,7 +3,7 @@ package com.mastery.java.task.dto;
 //employeeId, first_name, last_name, gender, department_id, job_title, date_of_birth
 
 import java.time.LocalDate;
-import javax.persistence.*;
+import javax.persistence.*; //для сохранении entity, JPA
 
 @Entity
 @Table(name = "employees")

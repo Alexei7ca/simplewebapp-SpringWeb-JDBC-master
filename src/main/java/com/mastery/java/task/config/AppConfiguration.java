@@ -1,11 +1,11 @@
 package com.mastery.java.task.config;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 // туту лучше конфиг датасоурс
 
 //сделать через web.xml
-
 
 public class AppConfiguration extends AbstractAnnotationConfigDispatcherServletInitializer {
     // Этот метод должен содержать конфигурации которые инициализируют Beans
@@ -14,7 +14,9 @@ public class AppConfiguration extends AbstractAnnotationConfigDispatcherServletI
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{
                 WebConfiguration.class,       //Spring MVC Config
-                DatabaseConfiguration.class   //DataBase Config
+                DatabaseConfiguration.class,   //DataBase Config
+                ServiceConfiguration.class,
+                ValidatorConfig.class
         };
     }
 
